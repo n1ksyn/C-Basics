@@ -1,0 +1,43 @@
+using System;
+
+namespace _06._Wedding_Seats
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            char lastSector = char.Parse(Console.ReadLine());
+            int rowsFirstSector = int.Parse(Console.ReadLine());
+            int seatsOnOddRow = int.Parse(Console.ReadLine());
+
+            int totalSeats = 0;
+
+            for (char sector = 'A'; sector <= lastSector; sector++)
+            {
+                for (int row = 1; row <= rowsFirstSector; row++)
+                {
+                    int seatsOnThisRow;
+
+                    if (row % 2 == 1)
+                    {
+                        seatsOnThisRow = seatsOnOddRow;
+                    }
+                    else
+                    {
+                        seatsOnThisRow = seatsOnOddRow + 2;
+                    }
+
+                    for (char seat = 'a'; seat < 'a' + seatsOnThisRow; seat++)
+                    {
+                        Console.WriteLine($"{sector}{row}{seat}");
+                        totalSeats++;
+                    }
+                }
+
+                rowsFirstSector++;
+            }
+
+            Console.WriteLine(totalSeats);
+        }
+    }
+}
