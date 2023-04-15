@@ -1,0 +1,32 @@
+using System;
+
+namespace _01._Unique_PIN_Codes
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int firstDigitUp = int.Parse(Console.ReadLine());
+            int secondDigitUp = int.Parse(Console.ReadLine());
+            int thirdDigitUp = int.Parse(Console.ReadLine());
+            
+
+            for (int i = 2; i <= firstDigitUp; i+=2)
+            {
+               
+                for (int j = 2; j <= secondDigitUp; j++)
+                {
+                    
+
+                    for (int k = 2; k <= thirdDigitUp; k+=2)
+                    {
+                        if (j == 2 || j == 3 || j == 5 || j == 7 )
+                        {
+                            Console.WriteLine($"{i} {j} {k}");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
